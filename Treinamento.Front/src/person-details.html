@@ -1,0 +1,21 @@
+<template>
+  <require from="./styles.css"></require>
+
+  <div class="container">
+  <h3 class="ui header">Editar | ID: ${person.id}</h3>
+  <form class="ui form">
+    <div class="field">
+      <input type="text" name="Name" title.bind= "person.name" placeholder.bind="person.name" value.bind="person.name">
+    </div>
+    <div class="field">
+      <input type="text" name="CPF" placeholder="${person.cpf}"  value.bind="person.cpf">
+    </div>
+    <div class="field">
+      <input type="text" name="last-name" placeholder="${person.email}"  value.bind="person.email">
+    </div>
+    <button class="ui button" type="submit" click.delegate="cancelData()">Cancelar</button>
+    <button class="ui button" type="submit" click.delegate="changeData()">Salvar</button>
+  </form>
+
+</div>
+</template>

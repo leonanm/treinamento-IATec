@@ -1,0 +1,76 @@
+<template>
+  <require from="./filter-value-converter"></require>
+  <require from="./currency-value-converter"></require>
+  <require from="./person-details"></require>
+  <require from="./variables"></require>
+  <require from="./styles.css"></require>
+  <require from="./event-agg"></require>
+
+  <div class="container">
+    <h3 class="ui header title-buscar">Buscar</h3>
+    <div class="ui input">
+      <input type="text" class="mg-b0" placeholder="Search..." value.bind="search">
+    </div>
+
+    <div class="ui two column grid">
+      <div class="left attached column">
+
+        <h3 class="ui header title-table">Tabela</h3>
+        <table class="ui table selectable">
+          <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Email</th>
+          </tr>
+          <tr repeat.for="i of list | filter:search" click.delegate="showForm(i)">
+            <td>${i.name}</td>
+            <td>${i.cpf}</td>
+            <td>${i.email}</td>
+          </tr>
+        </table>
+      </div>
+      <div class="right attached column">
+        <person-details if.bind="person" person.bind="person" confirm.call="saveForm(person)"
+          cancel.call="cancelForm()"></person-details>
+      </div>
+    </div>
+
+    <div class="mg-top">
+      <span class="mg-tw">TwoWay</span>
+      <span class="mg-bind">Bind</span>
+      <span class="mg-fv">FromView</span>
+      <span class="mg-ot">oneTime</span>
+      <span class="mg-tv">toView</span>
+
+
+      <div class="ui input">
+
+        <input class="mg-input" type="text" placeholder="Variável 1" value.bind="var1">
+
+        <input class="mg-input" type="text" placeholder="Variável 2" value.bind="var2">
+
+        <input class="mg-input" type="text" placeholder="Variável 3" value.bind="var3">
+
+        <input class="mg-input" type="text" placeholder="Variável 4" value.bind="var4">
+
+        <input class="mg-input" type="text" placeholder="Variável 5" value.bind="var5">
+
+      </div>
+
+      <div>
+        <variables var1.bind="var1" var2.bind="var2" var3.bind="var3" var4.bind="var4" var5.bind="var5"></variables>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui input">
+
+    <input class="mg-input" type="text" placeholder="Número" value.bind="num">
+    <span>${num | currency}</span>
+
+  </div>
+
+  <button click.delegate="send()">Enviar</button>
+  <event-agg></event-agg>
+
+</template>

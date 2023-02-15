@@ -1,0 +1,44 @@
+.container {
+  padding: 40px !important;
+}
+
+.title-buscar {
+  margin-top: 30px !important;
+  margin-bottom: 15px !important;
+}
+
+.title-table {
+  margin-top: 30px !important;
+}
+
+.mg-b0 {
+  margin-top: 0px !important;
+}
+
+.mg-input {
+  margin: 10px !important;
+}
+
+.mg-tw {
+  margin-left: 83px;
+}
+
+.mg-bind {
+  margin-left: 150px;
+}
+
+.mg-fv {
+  margin-left: 160px;
+}
+
+.mg-ot {
+  margin-left: 135px;
+}
+
+.mg-tv {
+  margin-left: 150px;
+}
+
+.mg-top{
+  margin-top: 10px;
+}
